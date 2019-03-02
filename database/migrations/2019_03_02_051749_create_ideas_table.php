@@ -16,8 +16,9 @@ class CreateIdeasTable extends Migration
         Schema::create('ideas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->string('title');
             $table->longText('description');
-            $table->integer('favorite_count');
+            $table->integer('good_count');
             $table->softDeletes();
             $table->timestamps();
         });
