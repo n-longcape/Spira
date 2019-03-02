@@ -14,10 +14,10 @@
                 <tbody>
                 @foreach ($ideas as $idea)
                     <tr>
-                        <td>{{ $idea->id }}</td>
+                        <td><a href="{{ url('ideas/'.$idea->id) }}">{{ $idea->id }}</a></td>
                         <td>{{ $idea->description }}</td>
                         <td>{{ $idea->good_count }}</td>
-                        <td><a href="{{ url('ideas/'.$idea->id) }}">{{ $idea->user_id }}</a></td>
+                        <td>{{ $idea->user->name }}</td>
                     </tr>
                 @endforeach
                 </tbody>

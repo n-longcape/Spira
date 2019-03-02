@@ -15,12 +15,14 @@ class CreateIdeasTable extends Migration
     {
         Schema::create('ideas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->longText('description');
-            $table->integer('good_count');
-            $table->softDeletes();
+            $table->integer('good_count')->default(0);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

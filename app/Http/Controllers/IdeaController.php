@@ -17,8 +17,12 @@ class IdeaController extends Controller
     {
         $ideas = $idea->all();
         return view('ideas.index', ['ideas' => $ideas]);
-
     }
+    
+    public function userIndex(Idea $idea) {
+        $ideas = $idea->where('user_id', Auth::id())->get();
+        return view('ideas.index', ['ideas' => $ideas]);
+    } 
 
     /**
      * @param Idea $idea
@@ -32,6 +36,7 @@ class IdeaController extends Controller
 
     public function store(Request $request, Idea $idea)
     {
+        $idea->title = $request->title;
         $idea->description = $request->description;
         $idea->user_id = Auth::id();
         $idea->save();
