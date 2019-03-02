@@ -20,8 +20,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('ideas', 'IdeaController');
 
-Route::middleware(['auth'])->group(function() {
-Route::get('mypage/ideas', 'IdeaController@userIndex');
+Route::prefix('mypage')->middleware(['auth'])->group(function() {
+Route::get('ideas', 'IdeaController@userIndex');
 });
 
 Auth::routes();
