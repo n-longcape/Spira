@@ -2,6 +2,9 @@
     $title = __('Idea') . '#' . $idea->id;
 @endphp
 @extends('layouts.app')
+@push('css')
+<link href="{{ asset('css/idea.css') }}" rel="stylesheet">
+@endpush
 @section('content')
     <div class="container text-center">
         <h1>{{ $title }}</h1>

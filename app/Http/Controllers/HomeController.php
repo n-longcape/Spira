@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Models\Idea;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -18,11 +19,11 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
+     * @param Idea $idea
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Idea $idea)
     {
-        return view('home');
+        return view('home',['ideas' => $idea::all()]);
     }
 }

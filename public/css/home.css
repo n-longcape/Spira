@@ -1,0 +1,42 @@
+li.idea {
+    width: 30%;
+    height: 200px;
+    overflow: hidden;
+    float: left;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    margin-right: 30px;
+    margin-bottom: 15px;
+    border: double 1px #000000;
+}
+
+.idea-title {
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+/*.idea-container {*/
+    /*overflow: hidden;*/
+    /*position: relative;*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+    /*-webkit-align-items: center;*/
+    /*align-items: center;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+/*}*/
+
+
+.idea-content {
+    height: 100%;
+    text-overflow: ellipsis;
+    margin: 0 20px;
+    word-wrap:break-word;
+}
