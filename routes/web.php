@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('ideas', 'IdeaController');
 
 Route::prefix('mypage')->middleware(['auth'])->group(function() {
-Route::get('ideas', 'IdeaController@userIndex');
+Route::get('ideas', 'IdeaController@userIndex')->name('mypage.ideas');
 });
 
 Auth::routes();

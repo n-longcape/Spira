@@ -51,7 +51,10 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="create-idea" href="{{ route('ideas.create') }}">アイデアを投稿する</a>
+                                <a class="nav-link" href="{{ route('mypage.ideas') }}">自分のアイデアを見る</a>
+                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown">
+                                <a id="create-idea" class="nav-link" href="{{ route('ideas.create') }}">アイデアを投稿する</a>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
