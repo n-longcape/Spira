@@ -1,0 +1,36 @@
+.idea {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.content .ideas .idea-info, .content .idea .comment-info, .content .comment .idea-info, .content .comment .comment-info {
+    position: relative;
+    float: left;
+    width: 90px;
+    border-top-left-radius: 2px;
+    background-color: #efedeb;
+    font-size: 90%;
+}
+
+.idea-info {
+    position: relative;
+    width: 150px;
+    float: right;
+    margin-left: auto;
+}
+
+.idea-content {
+    position: relative;
+    width: 400px;
+    float: right;
+    margin-right: auto;
+}

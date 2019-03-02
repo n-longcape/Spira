@@ -1,10 +1,33 @@
 @php
-    $title = __('Idea') . ': ' . $idea->name;
+    $title = __('Idea') . '#' . $idea->id;
 @endphp
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container text-center">
         <h1>{{ $title }}</h1>
+
+        <div class="idea">
+            <div class="idea-info">
+                <div class="idea-id">
+                    <label>{{ __('ID') }}</label>
+                    {{ $idea->id }}
+                </div>
+                <div class="idea-title">
+                    <label>{{ __('タイトル') }}</label>
+                    {{ $idea->title }}
+                </div>
+                <div class="user_id">
+                    <label>{{ __('作成者') }}</label>
+                    {{ $idea->user_id }}
+                </div>
+            </div>
+            <div class="idea-content">
+                <label>{{ __('説明文') }}</label>
+                <div class="idea-description">
+                    {{ $idea->description }}
+                </div>
+            </div>
+        </div>
 
         <div>
             <a href="{{ url('users/'.$idea->id.'/edit') }}" class="btn btn-primary">
@@ -15,16 +38,5 @@
             </a>
         </div>
 
-        <dl class="row">
-            <dt class="col-md-2">{{ __('ID') }}</dt>
-            <dd class="col-md-10">{{ $idea->id }}</dd>
-            <dt class="col-md-2">{{ __('タイトル') }}</dt>
-            <dd class="col-md-10">{{ $idea->title }}</dd>
-            <dt class="col-md-2">{{ __('説明文') }}</dt>
-            <dd class="col-md-10">{{ $idea->description }}</dd>
-            <dt class="col-md-2">{{ __('作成者') }}</dt>
-            <dd class="col-md-10">{{ $idea->user_id }}</dd>
-
-        </dl>
     </div>
 @endsection
