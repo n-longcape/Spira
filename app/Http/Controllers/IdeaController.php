@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Models\Idea;
+use App\Models\Category;
+use App\Models\Idea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,7 @@ class IdeaController extends Controller
         $ideas = $idea->all();
         return view('ideas.index', ['ideas' => $ideas]);
     }
-    
+
     public function userIndex(Idea $idea) {
         $ideas = $idea->where('user_id', Auth::id())->get();
         return view('ideas.index', ['ideas' => $ideas]);
@@ -26,16 +27,18 @@ class IdeaController extends Controller
 
     /**
      * @param Idea $idea
+     * @param Category $category
      * @return mixed
      */
-    public function create(Idea $idea)
+    public function create(Idea $idea, Category $category)
     {
-        return view('ideas.create', ['idea' => $idea]);
+        return view('ideas.create', ['idea' => $idea, 'categories' => $category::all()]);
     }
 
 
     public function store(Request $request, Idea $idea)
     {
+        $idea->category_id = $request->category;
         $idea->title = $request->title;
         $idea->description = $request->description;
         $idea->user_id = Auth::id();

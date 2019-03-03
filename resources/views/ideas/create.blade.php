@@ -6,6 +6,15 @@
             @method('POST')
             <div class="form-group">
                 <div class="form-group mt-4">
+                    <label for="description">{{ __('カテゴリー') }}</label>
+                    <select id="category-select" name="category">
+                        @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+                <div class="form-group mt-4">
                     <label for="description">{{ __('タイトル') }}</label>
                     <input type="text" name="title" />
                 </div>
