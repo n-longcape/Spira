@@ -4,6 +4,8 @@
 @endpush
 @section('content')
     <div class="container">
+        <div id="search-keyword" class="container">
+        </div>
         <div class="container text-center ideas">
             <h2>みんなの新着アイデア</h2>
             <div class="ideas">
