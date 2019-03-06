@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Tag;
 
-class CategoryController extends Controller
+class TagsController extends Controller
 {
 
     /**
      * Show the application dashboard.
-     * @param Category $category
+     * @param Tag $tag
      * @return \Illuminate\Http\Response
      */
-    public function index(Category $category)
+    public function index(Tag $tag)
     {
-        return response($category::all());
+        return response($tag::all());
     }
 }
