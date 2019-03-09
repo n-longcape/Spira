@@ -15,6 +15,6 @@ class HomeController extends Controller
      */
     public function index(Idea $idea)
     {
-        return view('home',['ideas' => $idea::all()]);
+        return view('home',['ideas' => $idea::paginate(20)]);
     }
 }

@@ -23,3 +23,5 @@ Route::resource('categories', 'Api\\CategoryController', ['only' => ['index']]);
 
 Route::resource('tags', 'Api\\TagsController', ['only' => ['index']]);
 
+
+Route::resource('keywords', 'Api\\KeywordController', ['only' => ['index']]);

@@ -9,7 +9,7 @@ class CategoryController extends Controller
 {
 
     /**
-     * Show the application dashboard.
+     * Category
      * @param Category $category
      * @return \Illuminate\Http\Response
      */

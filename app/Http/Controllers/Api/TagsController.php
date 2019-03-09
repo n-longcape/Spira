@@ -9,7 +9,7 @@ class TagsController extends Controller
 {
 
     /**
-     * Show the application dashboard.
+     * Tag
      * @param Tag $tag
      * @return \Illuminate\Http\Response
      */
